@@ -1,0 +1,83 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/template/template.xhtml">
+	<ui:param name="page_name" value="Accueil" />
+	<ui:define name="content">
+	
+<div class="modal fade" id="addtask" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="title" id="defaultModalLabel">Add New Task</h6>
+            </div>
+            <div class="modal-body">
+               
+            </div>
+            <div class="modal-footer">
+                   </div>
+        </div>
+    </div>
+</div>
+ <div class="section-body">
+            <div class="container-fluid">
+                     <div class="d-md-flex justify-content-between align-items-center">
+                    <ul class="nav nav-tabs page-header-tab">
+                        <li class="nav-item"><a class="nav-link active" id="TaskBoard-tab" data-toggle="tab" href="#TaskBoard-list">List View</a></li>
+                        <li class="nav-item"><a class="nav-link" id="TaskBoard-tab" data-toggle="tab" href="#TaskBoard-grid">Grid View</a></li>
+                    </ul>
+                    <div class="header-action d-flex">
+                        <div class="input-group mr-2">
+                        </div>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addtask"><i class="fe fe-plus mr-2"></i>Add</button>
+                    </div>
+                </div>
+		<h:form>
+			<center>
+				<div class="row clearfix">
+					<div class="form-group col-md-6">
+						<h:outputLabel for="inputEmail4">Title</h:outputLabel>
+						<h:inputText class="form-control" id="inputEmail4"
+							placeholder="Title" value="#{missionBean.title}"></h:inputText>
+					</div>
+					<div class="form-group col-md-6">
+						<h:outputLabel for="Description">Description</h:outputLabel>
+						<h:inputTextarea class="form-control" placeholder="Description"
+							value="#{missionBean.description}"></h:inputTextarea>
+					</div>
+
+					<div class="form-group col-md-6">
+						<h:outputLabel for="Description">Date Debut</h:outputLabel>
+						<h:inputText class="form-control" placeholder="Date Debut"
+							styleClass="form-control datepicker"
+							value="#{missionBean.datedeb}">
+							<f:convertDateTime pattern="yy-mm-dd" />
+
+						</h:inputText>
+					</div>
+
+					<div class="form-group col-md-6">
+						<h:outputLabel for="Description">Date Fin</h:outputLabel>
+						<h:inputText class="form-control" placeholder="Date Fin"
+							styleClass="form-control datepicker"
+							value="#{missionBean.datefin}">
+							<f:convertDateTime pattern="yy-mm-dd" />
+
+						</h:inputText>
+					</div>
+				</div>
+
+				<h:commandButton value="Ajouter Mission"
+					action="#{missionBean.doAddMission()}" styleClass="btn btn-primary btn-lg btn-block"></h:commandButton>
+			</center>
+		</h:form>
+		</div></div>
+		
+	<script src="../resources/formatDatePicker.js"></script>
+</ui:define>
+</ui:composition>
+
+
+

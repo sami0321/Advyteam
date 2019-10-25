@@ -8,7 +8,6 @@ import javax.faces.application.FacesMessage;
 import javax.faces.application.ResourceHandler;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import javax.inject.Named;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;

@@ -8,7 +8,6 @@ import javax.faces.bean.SessionScoped;
 
 import main.entity.Employee;
 
-@SuppressWarnings("deprecation")
 @ManagedBean
 @SessionScoped
 public class NavigationBean implements Serializable{
