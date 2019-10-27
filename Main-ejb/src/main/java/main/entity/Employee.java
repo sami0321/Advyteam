@@ -79,5 +79,8 @@ public class Employee implements Serializable {
 		this.phonenumber = phonenumber;
 	} 
 	
+	@ManyToOne
+	Employee manager;
+	
 
 }
