@@ -28,7 +28,6 @@ public class MissionService implements IMissionService{
 
 	@Override
 	public void removeMission(int id) {
-		// TODO Auto-generated method stub
 		Mission mission =getMissionById(id);
 		em.remove(mission);
 	}

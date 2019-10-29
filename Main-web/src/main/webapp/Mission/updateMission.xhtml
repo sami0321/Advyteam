@@ -1,0 +1,57 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/template/template.xhtml">
+	<ui:param name="page_name" value="Accueil" />
+	<ui:define name="content">
+
+							<h:form>
+								<center>
+									<div class="row clearfix">
+										<div class="form-group col-md-6">
+											<h:outputLabel for="inputEmail4">Title</h:outputLabel>
+											<h:inputText class="form-control" id="inputEmail4"
+												placeholder="Title" value="#{missionBean.title}"></h:inputText>
+										</div>
+										<div class="form-group col-md-6">
+											<h:outputLabel for="Description">Description</h:outputLabel>
+											<h:inputTextarea class="form-control"
+												placeholder="Description" value="#{missionBean.description}"></h:inputTextarea>
+										</div>
+
+										<div class="form-group col-md-6">
+											<h:outputLabel for="Description">Date Debut</h:outputLabel>
+											<h:inputText class="form-control" placeholder="Date Debut"
+												styleClass="form-control datepicker"
+												value="#{missionBean.datedeb}">
+												<f:convertDateTime pattern="yy-mm-dd" />
+
+											</h:inputText>
+										</div>
+
+										<div class="form-group col-md-6">
+											<h:outputLabel for="Description">Date Fin</h:outputLabel>
+											<h:inputText class="form-control" placeholder="Date Fin"
+												styleClass="form-control datepicker"
+												value="#{missionBean.datefin}">
+												<f:convertDateTime pattern="yy-mm-dd" />
+
+											</h:inputText>
+										</div>
+									</div>
+
+									<h:commandButton value="Update" icon="plus-sign"
+										action="#{missionBean.editMission()}"
+										styleClass="btn btn-primary btn-lg btn-block"></h:commandButton>
+								</center>
+							</h:form>
+				
+
+
+
+	</ui:define>
+</ui:composition>
+
+
+
