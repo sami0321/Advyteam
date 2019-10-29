@@ -6,9 +6,20 @@ import java.util.Set;
 import javax.persistence.*;
 
 
+
 @Entity(name="Employee")
 
 public class Employee implements Serializable {
+
+	public static  Employee UserConnected ;
+	
+	public static Employee getUserConnected() {
+		return UserConnected;
+	}
+	public static void setUserConnected(Employee userConnected) {
+		UserConnected = userConnected;
+	}
+
 	/**
 	 * 
 	 */
@@ -85,8 +96,11 @@ public class Employee implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="employe")
 	private Set<Reclamation> reclamations;
 	
-	@OneToOne(mappedBy="employee")
-	private Evaluation evaluation;
+	
+	
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="employee")
+	private Set<Evaluation> evaluation;
 
 	
 }

@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 
@@ -44,7 +45,7 @@ public class Evaluation implements Serializable {
 
 	private float autonomie;
 	
-	@OneToOne private Employee employee;
+	@ManyToOne private Employee employee;
 
 	
 	public Evaluation(int id, float performance, float collectif) {

@@ -9,7 +9,9 @@ import javax.faces.bean.SessionScoped;
 
 import main.entity.Employee;
 import main.entity.Reclamation;
+import main.interfaces.IEmployeeService;
 import main.interfaces.IReclamation;
+import main.services.EmployeeService;
 import main.services.ReclamationService;
 
 
@@ -39,13 +41,21 @@ public class ReclamationBean implements Serializable {
 		
 		private	Long phonenumber; 
 		
+		private static Employee connectedUser= Employee.UserConnected;
+		
+		
 		@EJB
 		IReclamation r = new ReclamationService();
+		
+		@EJB
+		IEmployeeService e = new EmployeeService();
 		///////add reclamation//////////
 
 		public void addreclamation() {
 		System.out.println("dkhal reclam");
-			r.addReclamation(new Reclamation( titre, description, "Non Traité", employe));
+//	employe=e.findEmployeeById();
+		
+			r.addReclamation(new Reclamation( titre, description, "Non Traité", connectedUser));
 		 
 			}
 	
@@ -88,7 +98,7 @@ public void  displayReclamationetat(Reclamation rec) {
 			
 		////////////////update reclamation //////////////
 		public void updatereclamation() { 
-			r.updateReclamation(new Reclamation(ReclamationIdToBeUpdated,titre,description));
+			r.updateReclamation(new Reclamation(ReclamationIdToBeUpdated,titre,description,"Non Traitéé"));
 			} 
 				
 	///////////lise employe//////////////
@@ -97,7 +107,7 @@ public void  displayReclamationetat(Reclamation rec) {
 
 	/////////liste reclamation by id emp////////////////
 	private List<Reclamation> reclamationsemp;
-	public List<Reclamation> getReclamationsemp() { reclamationsemp = r.findReclamationByIdEmp(1); return reclamationsemp; }
+	public List<Reclamation> getReclamationsemp() { reclamationsemp = r.findReclamationByIdEmp(connectedUser.getId()); return reclamationsemp; }
 	///////////////delete reclamation /////////////////
 	
 	public void DeleteReclamation(Reclamation rec) { r.removeReclamation(rec.getId()); }

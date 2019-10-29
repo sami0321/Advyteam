@@ -85,10 +85,10 @@
 			<table>
 				<tr>
 					<td>&nbsp; &nbsp;<h:outputText value="Titre"></h:outputText> &nbsp; &nbsp; &nbsp;</td>
-					<td><h:inputText value="#{reclamationBean.titre}"></h:inputText></td>
+					<td><h:inputText required="true" requiredMessage="Titre invalide" value="#{reclamationBean.titre}"></h:inputText></td>
 					
 					<td>&nbsp; &nbsp;<h:outputText value="Description"></h:outputText> &nbsp; &nbsp;</td>
-					<td>&nbsp; &nbsp; <h:inputText value="#{reclamationBean.description}"></h:inputText>  &nbsp; &nbsp;</td>
+					<td>&nbsp; &nbsp; <h:inputText required="true" requiredMessage="Description invalide" value="#{reclamationBean.description}"></h:inputText>  &nbsp; &nbsp;</td>
 				
 					
 				

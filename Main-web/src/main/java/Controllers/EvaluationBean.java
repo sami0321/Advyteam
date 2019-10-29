@@ -109,7 +109,7 @@ public String Reclamationpage() {
 
 public String Calc(float per , float col  , float fia, float auto) {
 float a = (per +col+fia+auto)/4;
-	System.out.println(a+"yassine");
+	
 	if (a>=4)
 	{return " Excellence : Votre salaire va augmenté de 30% " ;}
 	

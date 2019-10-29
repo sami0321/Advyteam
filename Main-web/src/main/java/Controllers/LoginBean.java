@@ -37,8 +37,9 @@ public class LoginBean implements Serializable ,Filter{
 	private String username;	
     private String password;
     private Employee emp;
-	
-    public String getUsername() {
+    
+   
+	public String getUsername() {
     	System.out.println(username);
 		return username;
 	}
@@ -86,6 +87,7 @@ public String doLogin() {
            return null;
        } else {
            context.getExternalContext().getSessionMap().put("user", emp);
+           Employee.setUserConnected(emp);
            return "Employee/index?faces-redirect=true";
        }
 	
