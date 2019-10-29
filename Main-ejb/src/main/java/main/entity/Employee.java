@@ -1,8 +1,11 @@
 package main.entity;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.*;
+
+
 @Entity(name="Employee")
 
 public class Employee implements Serializable {
@@ -79,5 +82,11 @@ public class Employee implements Serializable {
 		this.phonenumber = phonenumber;
 	} 
 	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="employe")
+	private Set<Reclamation> reclamations;
+	
+	@OneToOne(mappedBy="employee")
+	private Evaluation evaluation;
 
+	
 }
