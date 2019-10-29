@@ -2,14 +2,127 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-xmlns:h="http://java.sun.com/jsf/html"
-xmlns:f="http://java.sun.com/jsf/core"
-xmlns:ui="http://java.sun.com/jsf/facelets">
-<head>
-<title>test</title>
-</head>
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 <body>
-<h1>Test</h1>
+
+	Liste des employees
+	<h:panelGroup columns="2">
+		<h:form>
+			<h:dataTable value="#{reclamationBean.employes}" var="employe"
+				border="1">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Login" />
+					</f:facet>
+					<h:outputText value="#{employe.cin}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Prenom" />
+					</f:facet>
+					<h:outputText value="#{employe.firstName}" />
+				</h:column>
+			</h:dataTable>
+		</h:form>
+	</h:panelGroup>
+
+	Tous les Reclamations
+
+	<h:panelGroup columns="2">
+		<h:form>
+			<h:dataTable value="#{reclamationBean.reclamations}"
+				var="reclamation" border="1">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Login" />
+					</f:facet>
+					<h:outputText value="#{reclamation.description}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Prenom" />
+					</f:facet>
+					<h:outputText value="#{reclamation.titre}" />
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Action" />
+					</f:facet>
+					<h:commandButton
+						action="#{reclamationBean.displayReclamation(reclamation)}" value="Edit" />
+
+				</h:column>
+
+			</h:dataTable>
+		</h:form>
+	</h:panelGroup>
+
+
+	User Reclamations
+
+
+	<h:panelGroup columns="2">
+		<h:form>
+			<h:dataTable value="#{reclamationBean.reclamationsemp}" var="rec"
+				border="1">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Login" />
+					</f:facet>
+					<h:outputText value="#{rec.description}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Prenom" />
+					</f:facet>
+					<h:outputText value="#{rec.titre}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Action" />
+					</f:facet>
+					<h:commandButton
+						action="#{reclamationBean.displayReclamation(rec)}" value="Edit" />
+<h:commandButton
+						action="#{reclamationBean.DeleteReclamation(rec)}" value="Delete" />
+				</h:column>
+
+
+			</h:dataTable>
+		</h:form>
+	</h:panelGroup>
+
+
+	Add and update reclamation cote user
+
+	<h:panelGroup columns="2">
+		<h:form>
+			<table>
+				<tr>
+					<td><h:outputText value="Description"></h:outputText></td>
+					<td><h:inputText value="#{reclamationBean.description}"></h:inputText></td>
+				</tr>
+				<tr>
+					<td><h:outputText value="Titre"></h:outputText></td>
+					<td><h:inputText value="#{reclamationBean.titre}"></h:inputText></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+					<h:commandButton value="Add Reclamation" action="#{reclamationBean.addreclamation()}" />
+					<h:commandButton action="#{reclamationBean.updatereclamation()}" value="update Reclamation" />
+
+					</td>
+				</tr>
+
+			</table>
+		</h:form>
+	</h:panelGroup>
+
+
+
 
 </body>
 </html>

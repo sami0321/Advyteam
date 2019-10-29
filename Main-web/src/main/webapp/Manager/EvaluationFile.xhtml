@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+
+<meta name="viewport"
+	content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+<title>:: Epic :: Table Basic</title>
+
+<!-- Bootstrap Core and vandor -->
+<link rel="stylesheet"
+	href="../resources/assets/plugins/bootstrap/css/bootstrap.min.css" />
+
+<!-- Core css -->
+<link rel="stylesheet" href="../resources/assets/css/main.css" />
+<link rel="stylesheet" href="../resources/assets/css/theme2.css" />
+<script>
+
+// console.log(document.getElementById('performance').value);
+// alert(r);
+
+	  
+	
+
+ function calc() {
+	
+var values=0;
+ 
+for (var num = 1 ; num &lt; 3; num++ )
+	{
+var radios = document.getElementsByName( num.toString());
+
+console.log(radios);
+
+for (var i = 0 ; i &lt; radios.length ; i++) 
+{
+    if (radios[i].checked) {
+        
+        values =values + parseInt(radios[i].value);       
+    }
+
+
+
+}
+
+	}
+
+//alert(values/2);
+console.log(values);
+
+
+return values/2;
+}
+ 
+ function calc1() {
+		
+	 var values=0;
+	  
+	 for (var num = 3 ; num &lt; 7; num++ )
+	 	{
+	 var radios = document.getElementsByName( num.toString());
+
+	 console.log(radios);
+
+	 for (var i = 0 ; i &lt; radios.length ; i++) 
+	 {
+	     if (radios[i].checked) {
+	         
+	         values =values + parseInt(radios[i].value);       
+	     }
+
+
+
+	 }
+
+	 	}
+
+	 //alert(values/4);
+	 console.log(values);
+
+
+	 return values/4;
+	 }
+ 
+
+ function calc2() {
+		
+	 var values=0;
+	  
+	 for (var num = 7 ; num &lt; 10; num++ )
+	 	{
+	 var radios = document.getElementsByName( num.toString());
+
+	 console.log(radios);
+
+	 for (var i = 0 ; i &lt; radios.length ; i++) 
+	 {
+	     if (radios[i].checked) {
+	         
+	         values =values + parseInt(radios[i].value);       
+	     }
+
+
+
+	 }
+
+	 	}
+
+	 //alert(values/4);
+	 console.log(values);
+
+
+	 return values/3;
+	 }
+ 
+ 
+ function calc3() {
+		
+	 var values=0;
+	  
+	 for (var num = 10 ; num &lt; 15; num++ )
+	 	{
+	 var radios = document.getElementsByName( num.toString());
+
+	 console.log(radios);
+
+	 for (var i = 0 ; i &lt; radios.length ; i++) 
+	 {
+	     if (radios[i].checked) {
+	         
+	         values =values + parseInt(radios[i].value);       
+	     }
+
+
+
+	 }
+
+	 	}
+
+	
+	 console.log(values);
+
+
+	 return values/5;
+	 }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  function test()
+  {
+	  document.getElementById("form:performance").value=calc();
+	
+	  document.getElementById("form:collectif").value=calc1();
+	  
+	  document.getElementById("form:fiabilite").value=calc2();
+	  
+	  document.getElementById("form:autonomie").value=calc3();
+	  
+	  
+	//  document.getElementById("form:performance").value=calc();
+	  
+	  var element = document.getElementById("h1");
+	  element.innerHTML = calc();
+	  
+	  var element1 = document.getElementById("h2");
+	  element1.innerHTML = calc1();
+	  
+	  var element2 = document.getElementById("h3");
+	  element2.innerHTML = calc2();
+	  
+	  
+	  var element3 = document.getElementById("h4");
+	  element3.innerHTML = calc3();
+  }
+ 
+ </script>
+
+
+
+</head>
+
+<body class="font-montserrat">
+	<div class="card">
+		<div class="card-header">
+			<h3 class="card-title">
+				Evaluation <small>Grille d'evaluation annuelle 2019 
+				</small> 
+				<h:outputText  value="Prenom  : #{evaluationBean.employ.firstName} "></h:outputText> <br></br>
+				<h:outputText  value="Nom  : #{evaluationBean.employ.lastName} "></h:outputText><br></br>
+				<h:outputText  value="CIN  : #{evaluationBean.employ.cin} "></h:outputText><br></br>
+			</h3>
+		</div>
+		
+		
+		<div class="card-body">
+			<div class="table-responsive">
+				<form name="f1">
+					<table class="table mb-0">
+						<thead>
+							<tr>
+								<th></th>
+								<th>Moyenne <br></br>pendérée/5</th>
+								<th>Point <br></br> d'amelioration <br></br> prioritaire
+								</th>
+								<th>En-dessous du <br></br> Niveau attendu
+								</th>
+								<th>Atteinte du <br></br> niveau attendu
+								</th>
+								<th>Au-dessus du <br></br> niveau attendu
+								</th>
+								<th>Excellence</th>
+							</tr>
+						</thead>
+
+						<thead>
+							<tr>
+								<th colspan="3" style="color:blue;">Savoir faire</th>
+
+								<th></th>
+								<th></th>
+								<th></th>
+								<th></th>
+							</tr>
+						</thead>
+
+						<thead>
+							<tr>
+								<th  style="color:green;">Performance dans son poste : </th>
+<th  style="color:green;"><h6 id="h1"></h6></th>
+<th></th>
+<th></th>
+								<th></th>
+								<th></th>
+								<th></th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<th scope="row">Qualité du travail fourni</th>
+								<td></td>
+								<td><input type="radio" id="p1" name="1" value="1" /></td>
+								<td><input type="radio" id="p1" name="1" value="2" /></td>
+								<td><input type="radio" id="p1" name="1" value="3" /></td>
+								<td><input type="radio" id="p1" name="1" value="4" /></td>
+								<td><input type="radio" id="p1" name="1" value="5" /></td>
+							</tr>
+							<tr>
+								<th scope="row">Quantité du travail produit</th>
+								<td></td>
+								<td><input type="radio" id="p1" name="2" value="1" /></td>
+								<td><input type="radio" id="p1" name="2" value="2" /></td>
+								<td><input type="radio" id="p1" name="2" value="3" /></td>
+								<td><input type="radio" id="p1" name="2" value="4" /></td>
+								<td><input type="radio" id="p1" name="2" value="5" /></td>
+							</tr>
+
+
+							<tr>
+								<th style="color:blue;" colspan="3">Savoir être</th>
+								<th></th>
+								<th></th>
+								<th></th>
+								<th></th>
+								<th></th>
+							</tr>
+
+
+							<thead>
+								<tr>
+									<th  style="color:green;" >Sens du collectif et coopération : </th>
+
+<th style="color:green;"><h6 id="h2"></h6></th>
+<th></th>
+									<th></th><th></th>
+									<th></th>
+									<th></th>
+								</tr>
+							</thead>
+
+							<tr>
+								<th scope="row">Partage des informations</th>
+								<td></td>
+								<td><input type="radio" id="p1" name="3" value="1" /></td>
+								<td><input type="radio" id="p1" name="3" value="2" /></td>
+								<td><input type="radio" id="p1" name="3" value="3" /></td>
+								<td><input type="radio" id="p1" name="3" value="4" /></td>
+								<td><input type="radio" id="p1" name="3" value="5" /></td>
+							</tr>
+
+
+							<tr>
+								<th scope="row">Capacité de travailler en groupe</th>
+								<td></td>
+								<td><input type="radio" id="p1" name="4" value="1" /></td>
+								<td><input type="radio" id="p1" name="4" value="2" /></td>
+								<td><input type="radio" id="p1" name="4" value="3" /></td>
+								<td><input type="radio" id="p1" name="4" value="4" /></td>
+								<td><input type="radio" id="p1" name="4" value="5" /></td>
+							</tr>
+
+							<tr>
+								<th scope="row">Qualité de relation avec les autres
+									services</th>
+								<td></td>
+								<td><input type="radio" id="p1" name="5" value="1" /></td>
+								<td><input type="radio" id="p1" name="5" value="2" /></td>
+								<td><input type="radio" id="p1" name="5" value="3" /></td>
+								<td><input type="radio" id="p1" name="5" value="4" /></td>
+								<td><input type="radio" id="p1" name="5" value="5" /></td>
+							</tr>
+
+							<tr>
+								<th scope="row">Qualité de relation avec ses collegues
+									directs</th>
+							<td></td>	<td><input type="radio" id="p1" name="6" value="1" /></td>
+								<td><input type="radio" id="p1" name="6" value="2" /></td>
+								<td><input type="radio" id="p1" name="6" value="3" /></td>
+								<td><input type="radio" id="p1" name="6" value="4" /></td>
+								<td><input type="radio" id="p1" name="6" value="5" /></td>
+							</tr>
+							
+							<thead>
+								<tr>
+									<th  style="color:green;">Fiabilité : </th>
+<th  style="color:green;"><h6 id="h3"></h6></th>
+<th></th>
+<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+								</tr>
+							</thead>
+<tr>
+								<th scope="row">Respect des deadlines</th>
+							<td></td>	<td><input type="radio" id="p1" name="7" value="1" /></td>
+								<td><input type="radio" id="p1" name="7" value="2" /></td>
+								<td><input type="radio" id="p1" name="7" value="3" /></td>
+								<td><input type="radio" id="p1" name="7" value="4" /></td>
+								<td><input type="radio" id="p1" name="7" value="5" /></td>
+							</tr>
+							
+							<tr>
+								<th scope="row">Ponctualité</th>
+								<td></td> <td><input type="radio" id="p1" name="8" value="1" /></td>
+								<td><input type="radio" id="p1" name="8" value="2" /></td>
+								<td><input type="radio" id="p1" name="8" value="3" /></td>
+								<td><input type="radio" id="p1" name="8" value="4" /></td>
+								<td><input type="radio" id="p1" name="8" value="5" /></td>
+							</tr>
+							
+							<tr>
+								<th scope="row">Intégrité</th>
+							<td></td>	<td><input type="radio" id="p1" name="9" value="1" /></td>
+								<td><input type="radio" id="p1" name="9" value="2" /></td>
+								<td><input type="radio" id="p1" name="9" value="3" /></td>
+								<td><input type="radio" id="p1" name="9" value="4" /></td>
+								<td><input type="radio" id="p1" name="9" value="5" /></td>
+							</tr>
+							
+							
+							
+							
+							
+							<thead>
+							
+								<tr>
+									<th style="color:green;">Autonomie :</th>
+									<th  style="color:green;"><h6 id="h4"></h6></th>
+<th></th>
+<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+								</tr>
+							</thead>
+<tr>
+								<th scope="row">Capacité a travailler <br></br>d'une manière independante </th>
+								<td></td><td><input type="radio" id="p1" name="10" value="1" /></td>
+								<td><input type="radio" id="p1" name="10" value="2" /></td>
+								<td><input type="radio" id="p1" name="10" value="3" /></td>
+								<td><input type="radio" id="p1" name="10" value="4" /></td>
+								<td><input type="radio" id="p1" name="10" value="5" /></td>
+							</tr>
+							
+							<tr>
+								<th scope="row">Capacité de prise d'initiatives</th>
+								<td></td> <td><input type="radio" id="p1" name="11" value="1" /></td>
+								<td><input type="radio" id="p1" name="11" value="2" /></td>
+								<td><input type="radio" id="p1" name="11" value="3" /></td>
+								<td><input type="radio" id="p1" name="11" value="4" /></td>
+								<td><input type="radio" id="p1" name="11" value="5" /></td>
+							</tr>
+							
+							<tr>
+								<th scope="row">Recherche d'informations complémentaires </th>
+								<td></td><td><input type="radio" id="p1" name="12" value="1" /></td>
+								<td><input type="radio" id="p1" name="12" value="2" /></td>
+								<td><input type="radio" id="p1" name="12" value="3" /></td>
+								<td><input type="radio" id="p1" name="12" value="4" /></td>
+								<td><input type="radio" id="p1" name="12" value="5" /></td>
+							</tr>
+							
+								<tr>
+								<th scope="row">capacité de faire face a des imprevus </th>
+								<td></td> <td><input type="radio" id="p1" name="13" value="1" /></td>
+								<td><input type="radio" id="p1" name="13" value="2" /></td>
+								<td><input type="radio" id="p1" name="13" value="3" /></td>
+								<td><input type="radio" id="p1" name="13" value="4" /></td>
+								<td><input type="radio" id="p1" name="13" value="5" /></td>
+							</tr>
+							
+								<tr>
+								<th scope="row">Capacité de resolution de problèmes </th>
+								<td></td> <td><input type="radio" id="p1" name="14" value="1" /></td>
+								<td><input type="radio" id="p1" name="14" value="2" /></td>
+								<td><input type="radio" id="p1" name="14" value="3" /></td>
+								<td><input type="radio" id="p1" name="14" value="4" /></td>
+								<td><input type="radio" id="p1" name="14" value="5" /></td>
+							</tr>
+
+						</tbody>
+					</table>
+
+				</form>
+
+<h:panelGroup columns="2">
+		<h:form id="form">
+			<table>
+
+				<tr>
+					<td><h:outputText style="visibility: hidden;" value="Performance "></h:outputText></td>
+					
+					<td><h:inputText style="visibility: hidden;" id="performance" value="#{evaluationBean.performance}"></h:inputText></td>
+				
+				<td><h:outputText style="visibility: hidden;" value="sens du Collectif"></h:outputText></td>
+					
+					<td><h:inputText style="visibility: hidden;" id="collectif" value="#{evaluationBean.collectif}"></h:inputText></td>
+					
+					
+					<td><h:inputText style="visibility: hidden;" id="fiabilite" value="#{evaluationBean.fiabilite}"></h:inputText></td>
+					
+					
+					
+					
+					<td><h:inputText style="visibility: hidden;" id="autonomie" value="#{evaluationBean.autonomie}"></h:inputText></td>
+				
+				<td>
+
+				    <button onclick="test()" type="button" class="btn btn-primary mb-15" > Evaluer </button> </td>  
+					<td><h:commandButton class="btn btn-primary mb-15" value="Sauvegarder" action="#{evaluationBean.addevaluation}" /></td>
+				</tr>
+
+				
+
+			</table>
+		</h:form>
+	</h:panelGroup>
+
+
+			</div>
+		</div>
+	</div>
+
+	
+
+</body>
+</html>
