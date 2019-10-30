@@ -1,0 +1,61 @@
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/template/template.xhtml">
+	<ui:param name="page_name" value="Accueil" />
+	<ui:define name="content">
+		<h:panelGroup>
+			<p:panel header="AdvyTeam: Competence">
+				<h:form>
+					<table>
+
+						<tr>
+
+							<td><p:outputLabel for="console" value="Famille:" /></td>
+							<td><h:selectOneMenu id="console"
+									value="#{competenceBean.famille}" style="width:125px">
+									<f:selectItem itemLabel="Choisir Famille" itemValue="" />
+									<f:selectItems value="#{data.familleCompetences}" />
+								</h:selectOneMenu></td>
+						</tr>
+
+						<tr>
+
+
+
+							<td><h:outputLabel value="Nom"></h:outputLabel></td>
+							<td><h:inputText value="#{competenceBean.nom}"></h:inputText></td>
+
+						</tr>
+						<tr>
+							<td><h:outputLabel value="Description"></h:outputLabel></td>
+							<td><h:inputTextarea value="#{competenceBean.description}"></h:inputTextarea></td>
+						</tr>
+
+						<tr>
+							<td><h:outputLabel value="Metier"></h:outputLabel></td>
+							<td><h:inputText value="#{competenceBean.metier}"></h:inputText></td>
+						</tr>
+
+
+						<tr>
+
+							<td><h:outputLabel value="Niveau:" /> <p:rating
+									value="#{competenceBean.niveau}" stars="5" cancel="false"
+									onRate="alert('Your level ' + value)" /></td>
+						</tr>
+
+					</table>
+					<tr>
+						<td colspan="2"><h:commandButton value="Ajouter Competence"
+								action="#{competenceBean.addCompetence()}" /></td>
+					</tr>
+
+				</h:form>
+			</p:panel>
+		</h:panelGroup>
+
+	</ui:define>
+</ui:composition>

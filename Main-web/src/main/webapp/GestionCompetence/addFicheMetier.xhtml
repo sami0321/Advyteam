@@ -1,0 +1,41 @@
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/template.xhtml">
+	<ui:param name="page_name" value="Accueil" />
+	<ui:define name="content">
+		<h:panelGroup>
+			<h:form>
+				<table>
+					<tr>
+						<td><h:outputText value="Competence"></h:outputText></td>
+						<td><h:inputText value="#{ficheMetierBean.nom}"></h:inputText></td>
+					</tr>
+					<tr>
+						<td><h:outputText value="Description"></h:outputText></td>
+						<td><h:inputText value="#{ficheMetierBean.description}"></h:inputText></td>
+					</tr>
+					<tr>
+						<td><h:outputText value="nom"></h:outputText></td>
+						<td><h:inputText value="#{ficheMetierBean.description}"></h:inputText></td>
+					</tr>
+					<tr>
+							<h:outputText value="Famille"></h:outputText>
+							
+							<h:selectOneMenu value="#{ficheMetierBean.famille}">
+								<f:selectItem itemLabel="Choisir Famille" itemValue="" />
+								<f:selectItems value="#{data.familleCompetences}" />
+							</h:selectOneMenu>
+						</tr>
+				</table>
+				<tr>
+							<td colspan="2"><h:commandButton value="Ajouter Fiche"
+									action="#{ficheMetierBean.addFicheMetier()}" /></td>
+						</tr>
+
+			</h:form>
+		</h:panelGroup>
+	</ui:define>
+</ui:composition>

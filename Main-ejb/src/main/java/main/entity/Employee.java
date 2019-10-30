@@ -1,8 +1,12 @@
 package main.entity;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.*;
+
+import main.entity.FicheMetier;
+import main.entity.ReferenceCompetence;
 @Entity(name="Employee")
 
 public class Employee implements Serializable {
@@ -30,6 +34,16 @@ public class Employee implements Serializable {
 	Long Cin;
 	@Column(name="U_PhoneNumber")
 	Long phonenumber;
+	@ManyToOne(cascade = CascadeType.ALL)
+	FicheMetier ficheMetier;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "employee")
+	private Set<ReferenceCompetence> ReferenceCompetences;
+	
+	@OneToMany(mappedBy="candidate",cascade={CascadeType.ALL},fetch =FetchType.EAGER)
+	private Set<Result> result;
+	@OneToMany(mappedBy="candidate",cascade={CascadeType.ALL},fetch =FetchType.EAGER)
+	private Set<Result> reclamation;
+	
 	public int getId() {
 		return id;
 	}

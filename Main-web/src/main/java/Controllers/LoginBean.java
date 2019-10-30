@@ -86,7 +86,7 @@ public String doLogin() {
            return null;
        } else {
            context.getExternalContext().getSessionMap().put("user", emp);
-           return "Employee/index?faces-redirect=true";
+           return "GestionCompetence/addCompetence.xhtml?faces-redirect=true";
        }
 	
 

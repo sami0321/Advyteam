@@ -1,0 +1,58 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/template/template.xhtml">
+	<ui:param name="page_name" value="Accueil" />
+	<ui:define name="content">
+		<h:panelGroup>
+			<h:form>
+				<h:dataTable value="#{competenceBean.competences}" var="competence"
+					border="1">
+					s
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="competence" />
+						</f:facet>
+						<h:outputText value="#{competence.nomc}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="description" />
+						</f:facet>
+						<h:outputText value="#{competence.descriptionc}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="niveau" />
+						</f:facet>
+						<h:outputText value="#{competence.niveau}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Metier" />
+						</f:facet>
+						<h:outputText value="#{competence.metier}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">
+							<h:outputText value="Competence" />
+						</f:facet>
+						<h:outputText value="#{competence.famille}" />
+					</h:column>
+					<h:column>
+						<h:commandButton
+							action="#{competenceBean.removeCompetence(competence.id)}"
+							value="Supprimer" />
+						<h:commandButton
+							action="#{competenceBean.displayComptence(competence)}"
+							value="Afficher" />
+					</h:column>
+				</h:dataTable>
+				
+			</h:form>
+		</h:panelGroup>
+	</ui:define>
+
+
+</ui:composition>
