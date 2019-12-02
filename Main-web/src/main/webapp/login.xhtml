@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
+	
 	<ui:param name="page_name" value="Connexion" />
 
 	<head>
@@ -35,32 +36,32 @@
 					</div>
 					<div class="card-body">
 						<div class="card-title">Login to your account</div>
-							<h:form>
-						<div class="form-group">
-							<label class="form-label">Username</label>
+						<h:form>
+							<div class="form-group">
+								<label class="form-label">Username</label>
 								<h:inputText type="email" class="form-control"
 									id="exampleInputEmail1" aria-describedby="emailHelp"
 									placeholder="Enter email" value="#{loginBean.username}"></h:inputText>
-											
-						</div>
-						<div class="form-group">
-							<label class="form-label">Password</label>
-							<h:inputSecret type="password" class="form-control"
-								id="exampleInputPassword1" placeholder="Password"
-								value="#{loginBean.password}"></h:inputSecret>
-						</div>
-						<div class="form-group">
-							<label class="custom-control custom-checkbox"> <input
-								type="checkbox" class="custom-control-input"></input> <span
-								class="custom-control-label">Remember me</span>
-							</label>
-						</div>
-						<div class="form-footer">
-							<h:commandLink class="btn btn-primary btn-block"
-								action="#{loginBean.doLogin()}">
+
+							</div>
+							<div class="form-group">
+								<label class="form-label">Password</label>
+								<h:inputSecret type="password" class="form-control"
+									id="exampleInputPassword1" placeholder="Password"
+									value="#{loginBean.password}"></h:inputSecret>
+							</div>
+							<div class="form-group">
+								<label class="custom-control custom-checkbox"> <input
+									type="checkbox" class="custom-control-input"></input> <span
+									class="custom-control-label">Remember me</span>
+								</label>
+							</div>
+							<div class="form-footer">
+								<h:commandLink class="btn btn-primary btn-block"
+									action="#{loginBean.doLogin()}">
 								Sign in
 						</h:commandLink>
-						</div>
+							</div>
 						</h:form>
 					</div>
 
@@ -101,8 +102,8 @@
 			</div>
 		</div>
 
-		<script src="resources/assets/bundles/lib.vendor.bundle.js"></script>
-		<script src="resources/assets/js/core.js"></script>
+		<script src="../resources/assets/bundles/lib.vendor.bundle.js"></script>
+		<script src="../resources/assets/js/core.js"></script>
 	</body>
 
 </ui:composition>
